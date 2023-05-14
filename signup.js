@@ -33,6 +33,8 @@ app.post('/', function (req, res) {
 
     const jsonSub = JSON.stringify(subscriber);
 
+    console.log(jsonSub);
+
     const urlMail = 'https://us17.api.mailchimp.com/3.0/lists/9d47f2bde8';
 
     const options = {
