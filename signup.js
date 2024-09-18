@@ -39,11 +39,13 @@ app.post('/', function (req, res) {
 
     const options = {
         method: 'POST',
-        auth: 'pinkishram:16014bb7438848aa149c9b94e5ea9e8d-us17', //authentication,
+        auth: 'pinkishram:34c9854af0ff5114bbf4c6a55f63ed72-us17', //authentication,
     };
 
     const request = https.request(urlMail, options, (response) => {
+
         response.on('data', (data) => {
+            
             if (response.statusCode === 200) return res.sendFile(`${__dirname}/sucess.html`);
             if (response.statusCode !== 200) return res.sendFile(`${__dirname}/failuer.html`);
 
